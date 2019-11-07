@@ -5,6 +5,7 @@ const Schemes = require('./scheme-model.js');
 const router = express.Router();
 
 router.get('/', (req, res) => {
+  console.log("Getting all schemes");
   Schemes.find()
   .then(schemes => {
     res.json(schemes);
@@ -58,7 +59,7 @@ router.post('/', (req, res) => {
   });
 });
 
-router.post('/:id/steps', (req, res) => {
+router.post('/:id/steps', (req, res) => {//stretch
   const stepData = req.body;
   const { id } = req.params; 
 
